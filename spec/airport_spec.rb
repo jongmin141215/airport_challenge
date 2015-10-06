@@ -9,7 +9,7 @@ describe Airport do
 
   it { is_expected.to respond_to(:clear_for_landing).with(1).argument }
   it { is_expected.to respond_to(:clear_for_takeoff).with(1).argument }
-  it { is_expected.to respond_to(:weather_report) }
+  it { is_expected.to respond_to(:weather_report).with(1).argument }
 
   describe "#planes" do
     it "returns all the planes at the airport" do

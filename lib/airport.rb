@@ -1,5 +1,4 @@
 require_relative 'plane'
-require_relative 'weather'
 
 class Airport
 
@@ -24,8 +23,8 @@ class Airport
     planes << plane
   end
 
-  def weather_report
-    Weather.new.weather_report
+  def weather_report(weather)
+    weather.weather_report
   end
 
   private
