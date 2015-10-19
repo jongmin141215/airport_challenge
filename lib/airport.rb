@@ -9,15 +9,15 @@ class Airport
     @planes = []
   end
 
-  def clear_for_takeoff(plane)
-    fail 'Too stormy' if weather_report == :stormy
+  def clear_for_takeoff(plane, weather)
+    fail 'Too stormy' if weather_report(weather) == :stormy
     fail 'Airport empty' if empty?
     plane.take_off
     planes.delete(plane)
   end
 
-  def clear_for_landing(plane)
-    fail 'Too stormy' if weather_report == :stormy
+  def clear_for_landing(plane, weather)
+    fail 'Too stormy' if weather_report(weather) == :stormy
     fail 'Airport full' if full?
     plane.land
     planes << plane
